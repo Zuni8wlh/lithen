@@ -172,7 +172,7 @@ nav{
 }
 .section-head h2{ font-size:36px; max-width:520px; }
 .section-head p{ font-size:14.5px; opacity:0.6; max-width:280px; line-height:1.55; }
-section{ padding:100px 0; }
+section{ padding:76px 0; }
 .section-tight{ padding:70px 0; }
 .bg-alt{ background:var(--stone-100); }
 .bg-dark{ background:var(--stone-900); color:var(--stone-50); }
@@ -416,30 +416,60 @@ footer.site{ padding:60px 0 40px; border-top:1px solid var(--line); }
 
 /* ---------- SCROLL REVEAL ---------- */
 .reveal{
-  opacity:0; transform:translateY(22px);
-  transition:opacity .7s ease, transform .7s ease;
+  opacity:0; transform:translateY(32px) scale(0.97);
+  transition:opacity .65s cubic-bezier(0.16,1,0.3,1), transform .65s cubic-bezier(0.16,1,0.3,1);
 }
-.reveal.visible{ opacity:1; transform:translateY(0); }
-.card-grid-3 .reveal:nth-child(2), .specimen-grid .reveal:nth-child(2){ transition-delay:.08s; }
-.card-grid-3 .reveal:nth-child(3), .specimen-grid .reveal:nth-child(3){ transition-delay:.16s; }
-.specimen-grid .reveal:nth-child(4){ transition-delay:.24s; }
-.process-grid .reveal:nth-child(2){ transition-delay:.08s; }
-.process-grid .reveal:nth-child(3){ transition-delay:.16s; }
-.process-grid .reveal:nth-child(4){ transition-delay:.24s; }
+.reveal.visible{ opacity:1; transform:translateY(0) scale(1); }
+.card-grid-3 .reveal:nth-child(2), .specimen-grid .reveal:nth-child(2){ transition-delay:.09s; }
+.card-grid-3 .reveal:nth-child(3), .specimen-grid .reveal:nth-child(3){ transition-delay:.18s; }
+.specimen-grid .reveal:nth-child(4){ transition-delay:.27s; }
+.process-grid .reveal:nth-child(2){ transition-delay:.09s; }
+.process-grid .reveal:nth-child(3){ transition-delay:.18s; }
+.process-grid .reveal:nth-child(4){ transition-delay:.27s; }
 @media (prefers-reduced-motion: reduce){
   .reveal{ opacity:1; transform:none; transition:none; }
 }
 
+/* ---------- HERO LOAD-IN ---------- */
+.hero-visual, .hero-copy > *{
+  opacity:0; transform:translateY(18px);
+  transition:opacity .8s cubic-bezier(0.16,1,0.3,1), transform .8s cubic-bezier(0.16,1,0.3,1);
+}
+.hero-visual{ transform:translateX(-16px) translateY(0); }
+body.loaded .hero-visual{ opacity:1; transform:translateX(0) translateY(0); }
+body.loaded .hero-copy > *{ opacity:1; transform:translateY(0); }
+body.loaded .hero-copy > *:nth-child(1){ transition-delay:.12s; }
+body.loaded .hero-copy > *:nth-child(2){ transition-delay:.2s; }
+body.loaded .hero-copy > *:nth-child(3){ transition-delay:.28s; }
+body.loaded .hero-copy > *:nth-child(4){ transition-delay:.36s; }
+body.loaded .hero-copy > *:nth-child(5){ transition-delay:.44s; }
+body.loaded .hero-copy > *:nth-child(6){ transition-delay:.5s; }
+@media (prefers-reduced-motion: reduce){
+  .hero-visual, .hero-copy > *{ opacity:1; transform:none; transition:none; }
+}
+
 /* ---------- MICRO INTERACTIONS ---------- */
-.specimen, .info-card{ transition:transform .35s ease, box-shadow .35s ease; }
-.img-photo img{ transition:transform .6s ease; }
-.specimen:hover .img-photo img{ transform:scale(1.05); }
+.specimen, .info-card{ transition:transform .35s cubic-bezier(0.16,1,0.3,1), box-shadow .35s ease; }
+.specimen:hover{ transform:translateY(-4px); }
+.img-photo img{ transition:transform .6s cubic-bezier(0.16,1,0.3,1); }
+.specimen:hover .img-photo img{ transform:scale(1.06); }
 .nav-links a{ position:relative; }
 .nav-links a::after{
   content:""; position:absolute; left:0; bottom:-2px; width:0; height:1px;
   background:var(--moss-600); transition:width .25s ease;
 }
 .nav-links a:hover::after{ width:100%; }
+.logo-mark{ transition:transform .4s cubic-bezier(0.34,1.56,0.64,1); }
+.logo:hover .logo-mark{ transform:rotate(72deg) scale(1.08); }
+.btn-pill{ transition:transform .25s cubic-bezier(0.34,1.56,0.64,1), box-shadow .25s ease; }
+.btn-pill:hover{ transform:translateY(-2px) scale(1.015); box-shadow:0 10px 24px rgba(26,25,18,0.16); }
+.btn-pill:active{ transform:translateY(0) scale(0.98); }
+.btn-pill .thumb{ transition:transform .35s cubic-bezier(0.34,1.56,0.64,1); }
+.btn-pill:hover .thumb{ transform:rotate(-18deg); }
+.pill{ transition:transform .2s ease, background .2s ease; }
+.pill:hover{ transform:translateY(-2px); }
+.faq-item summary{ transition:opacity .2s ease; }
+.faq-item summary:hover{ opacity:0.6; }
 
-@media (prefers-reduced-motion: reduce){ *{ transition:none !important; } }
+@media (prefers-reduced-motion: reduce){ *{ transition:none !important; animation:none !important; } }
 a:focus-visible, button:focus-visible{ outline:2px solid var(--moss-600); outline-offset:3px; }
