@@ -35,4 +35,28 @@ document.addEventListener('DOMContentLoaded', function () {
   } else {
     targets.forEach(function (el) { el.classList.add('visible'); });
   }
+
+  // Materials horizontal-scroll arrow controls (mobile)
+  var track = document.querySelector('.materials-grid');
+  var wrap = document.querySelector('.materials-scroll');
+  if (track && wrap) {
+    var leftBtn = wrap.querySelector('.scroll-hint-left');
+    var rightBtn = wrap.querySelector('.scroll-hint-right');
+
+    var updateArrows = function () {
+      var max = track.scrollWidth - track.clientWidth;
+      if (leftBtn) leftBtn.classList.toggle('is-visible', track.scrollLeft > 10);
+      if (rightBtn) rightBtn.classList.toggle('is-visible', track.scrollLeft < max - 10);
+    };
+
+    track.addEventListener('scroll', updateArrows);
+    window.addEventListener('resize', updateArrows);
+    if (rightBtn) rightBtn.addEventListener('click', function () {
+      track.scrollBy({ left: track.clientWidth * 0.85, behavior: 'smooth' });
+    });
+    if (leftBtn) leftBtn.addEventListener('click', function () {
+      track.scrollBy({ left: -track.clientWidth * 0.85, behavior: 'smooth' });
+    });
+    updateArrows();
+  }
 });
