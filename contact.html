@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Lithen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<header class="site">
+  <nav>
+    <a class="logo" href="index.html"><div class="logo-mark"></div>Lithen</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="collection.html">Collection</a>
+      <a href="process.html">Process</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+    <div class="nav-icons">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.6" y2="16.6"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round"><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+    </div>
+    <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<section class="page-hero bg-dark">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Contact</div>
+    <span class="eyebrow">Get in touch</span>
+    <h1>Let's plan your piece</h1>
+    <p>Tell us about your space and we'll get back within one working day with next steps.</p>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="wrap" style="display:grid; grid-template-columns:1.3fr 0.7fr; gap:60px;">
+    <form>
+      <div class="form-grid">
+        <div class="form-field"><label for="name">Full name</label><input id="name" type="text" placeholder="Your name"></div>
+        <div class="form-field"><label for="email">Email</label><input id="email" type="email" placeholder="you@email.com"></div>
+        <div class="form-field"><label for="phone">Phone / WhatsApp</label><input id="phone" type="tel" placeholder="+62"></div>
+        <div class="form-field">
+          <label for="type">Project type</label>
+          <select id="type">
+            <option>Moss wall panel</option>
+            <option>Stone sculpture / island</option>
+            <option>Room divider</option>
+            <option>Tabletop piece</option>
+            <option>Custom installation</option>
+          </select>
+        </div>
+        <div class="form-field full"><label for="message">Tell us about your space</label><textarea id="message" placeholder="Room dimensions, style, and anything else that helps us plan"></textarea></div>
+      </div>
+      <button type="submit" class="btn-pill btn-compact" style="margin-top:20px;">Send request <span class="thumb"></span></button>
+      <div style="display:flex; gap:14px; margin-top:22px; align-items:center;">
+        <span class="label-tag">Follow</span>
+        <a href="#" class="btn-outline" style="font-size:13px;">Instagram</a>
+        <a href="#" class="btn-outline" style="font-size:13px;">Pinterest</a>
+      </div>
+    </form>
+
+    <div class="contact-info-list">
+      <div class="item"><span class="label-tag">Studio</span><p>Lithen Studio</p><p class="sub">Jakarta, Indonesia</p></div>
+      <div class="item"><span class="label-tag">Email</span><p>hello@lithen.co</p></div>
+      <div class="item"><span class="label-tag">Phone / WhatsApp</span><p>+62 812 0000 0000</p></div>
+      <div class="item"><span class="label-tag">Studio hours</span><p>Mon – Fri, 09:00 – 17:00</p><p class="sub">Visits by appointment</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-alt">
+  <div class="wrap">
+    <div class="img-photo" style="aspect-ratio:16/6;">
+      <iframe style="border:0; width:100%; height:100%;" loading="lazy"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=106.7758%2C-6.2624%2C106.9158%2C-6.1524&layer=mapnik&marker=-6.2088%2C106.8456"
+        title="Lithen studio location in Jakarta, Indonesia"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><div class="logo-mark"></div>Lithen</div>
+        <p>Nature-inspired moss and stone sculpture for modern interiors. Grown, carved, and installed by hand.</p>
+      </div>
+      <div><h4>Shop</h4><a href="collection.html">Moss Walls</a><a href="collection.html">Stone Islands</a><a href="collection.html">Dividers</a><a href="collection.html">Tabletop</a></div>
+      <div><h4>Studio</h4><a href="index.html">Home</a><a href="process.html">Process</a><a href="gallery.html">Gallery</a><a href="faq.html">FAQ</a></div>
+      <div><h4>Contact</h4><p>hello@lithen.co</p><p>Jakarta, Indonesia</p><a href="contact.html">Get in touch →</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Lithen Studio</span><span>Handmade nature decor</span></div>
+  </div>
+</footer>
+
+</body>
+</html>
