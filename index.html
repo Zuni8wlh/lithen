@@ -16,9 +16,8 @@
   .hero-dots span{ width:9px; height:9px; border-radius:50%; background:var(--stone-900); opacity:0.15; }
   .hero-dots span:first-child{ opacity:0.9; }
   .hero-image-frame{ border-radius:22px; aspect-ratio:4/4.35; }
-  .hero-badges{ display:flex; gap:12px; margin-top:20px; }
   .badge{ flex:1; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 14px; }
-  .badge .mono{ font-size:10px; opacity:0.55; display:block; margin-bottom:4px; text-transform:uppercase;}
+  .badge .mono{ font-family:'Fraunces',serif; font-style:italic; font-weight:500; font-size:12px; opacity:0.55; display:block; margin-bottom:4px; text-transform:none; letter-spacing:0; }
   .badge .label{ font-size:13.5px; font-weight:600; }
   .hero-copy{ padding-top:64px; }
   .hero-badges{ display:flex; gap:10px; margin:8px 0 26px; }
@@ -37,14 +36,26 @@
   .quote-attr{ font-size:13px; opacity:0.55; }
   .benefits-visual{ border-radius:16px; }
   @media (max-width:900px){
-    .hero-grid{ grid-template-columns:1fr; }
-    .hero-copy{ padding-top:28px; }
-    .hero-copy h1{ font-size:34px; }
-    .hero-badges{ gap:6px; }
+    .hero{ padding:36px 0 20px; }
+    .hero-grid{ grid-template-columns:1fr; gap:28px; }
+    .hero-copy{ padding-top:18px; }
+    .hero-copy h1{ font-size:32px; margin-bottom:14px; }
+    .hero-copy p.lead{ margin-bottom:22px; }
+    .hero-actions{ margin-bottom:22px; gap:14px; }
+    .hero-actions .btn-pill{ padding:10px 6px 10px 18px !important; font-size:13px !important; }
+    .hero-actions .btn-pill .thumb{ width:26px !important; height:26px !important; }
+    .hero-badges{ gap:6px; margin:0 0 18px; }
     .hero-badges .badge{ padding:9px 8px; }
-    .hero-badges .badge .mono{ font-size:8.5px; }
+    .hero-badges .badge .mono{ font-size:10px; margin-bottom:2px; }
     .hero-badges .badge .label{ font-size:11px; }
+    .stat-float{ padding:14px 16px; }
+    .hero-foot{ margin-top:18px; gap:24px; }
+    .pill-row{ flex-wrap:nowrap !important; gap:6px !important; }
+    .pill-row .pill{ font-size:10.5px; padding:6px 10px; white-space:nowrap; flex:1; text-align:center; }
     .studio-photos{ grid-template-columns:repeat(3,1fr) !important; gap:8px !important; }
+    section{ padding:44px 0; }
+    .section-head{ margin-bottom:30px; }
+    #about .wrap{ margin-bottom:44px !important; }
   }
 </style>
 </head>
@@ -105,10 +116,9 @@
 <section class="bg-dark">
   <div class="wrap" style="display:grid; grid-template-columns:1.1fr 0.9fr; gap:64px; align-items:center;">
     <div>
-      <span class="eyebrow">Why Lithen</span>
       <h2 style="font-size:38px; max-width:480px;">Discover the calm of <span class="accent">nature-driven</span> interior design</h2>
       <p style="opacity:0.6; max-width:400px; margin:22px 0 30px; font-size:15px; line-height:1.6;">Sustainable, maintenance-free, and shaped to slow a room down — every piece holds its form and colour for years without watering, trimming, or sunlight.</p>
-      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:46px;">
+      <div class="pill-row" style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:46px;">
         <div class="pill">Green design</div>
         <div class="pill">Eco living</div>
         <div class="pill">Calm spaces</div>
@@ -207,7 +217,7 @@
   <div class="wrap">
     <h2>Bring a piece of stillness into your space</h2>
     <p>Book a design consultation and we'll help you find the right form, size, and placement.</p>
-    <a href="contact.html" class="btn-pill">Book a consultation <span class="thumb"></span></a>
+    <a href="contact.html" class="btn-pill btn-compact">Book a consultation <span class="thumb"></span></a>
   </div>
 </section>
 
